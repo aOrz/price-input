@@ -4,16 +4,16 @@ function getCursortPosition(ctrl) {
     ctrl.focus();
     var sel = document.selection.createRange();
     sel.moveStart('character', -ctrl.value.length);
-    CaretPos = sel.text.length;
+    caretPos = sel.text.length;
   }
   // Firefox support
   else if (ctrl.selectionStart || ctrl.selectionStart == '0')
-    CaretPos = ctrl.selectionStart;
-  return (CaretPos);
+    caretPos = ctrl.selectionStart;
+  return (caretPos);
 }
 
 function priceInput(el, pre, length) {
-  var allowKeyCode = [49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 8, 190, 37, 38, 39, 40];
+  var allowKeyCode = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 8, 190, 37, 38, 39, 40];
   el.addEventListener('keydown', function(e) {
     if (allowKeyCode.indexOf(e.keyCode) < 0) {
       e.preventDefault();
