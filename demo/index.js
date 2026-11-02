@@ -20,7 +20,7 @@ function priceInput(el, pre, length) {
       return;
     }
     var cursorIndex = getCursortPosition(el);
-    if (cursorIndex < 1 && e.keyCode > 49) {
+    if (cursorIndex < pre.length && e.keyCode >= 48) {
       e.preventDefault();
       return;
     }
